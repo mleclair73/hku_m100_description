@@ -6,6 +6,8 @@
 
   <!-- Main quadrotor link -->
   <xacro:macro name="hku_m100_base_macro">
+    <!-- <link name="dummy"/> -->
+    
     <link name="base_link">
 
       <inertial>
@@ -28,7 +30,13 @@
         </geometry>
       </collision>
     </link>
-    <link name="dummy"/>
+    
+    <!-- 
+    <joint name="dummy_joint" type="fixed">
+      <parent link="dummy"/>
+      <child2 link="base_link"/>
+    </joint> -->
+
     <!-- DEFINE SENSORS HERE -->
     <!-- Sonar height sensor -->
      <!--<xacro:sonar_sensor name="sonar" parent="base_link" ros_topic="sonar_height" update_rate="10" min_range="0.03" max_range="3.0" field_of_view="${40*pi/180}" ray_count="3">
